@@ -1,10 +1,10 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
+
 
 const Home = () => {
   return (
     <div>
-        
+        <h1>This Home</h1>
     </div>
   );
 };

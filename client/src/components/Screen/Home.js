@@ -4,17 +4,19 @@ import axios from 'axios'
 const Home = () => {
 
   useEffect(()=>{
-
+    getData()
   }, []);
 
   const [data, setData] = useState([]);
 
   const getData = async ()=>{
-    const res = await axios.get('')
+    const res = await axios.get("https://62236b7e3af069a0f9a1d1c8.mockapi.io/users");
+    setData(res.data)
   }
 
   return (
-    <div className="container" >
+    <div className="container mt-5" >
+      <a href="/add" className="btn btn-primary"> <i className="fa-solid fa-plus"></i> tambah Mahasiswa</a>
        <table class="table table-striped">
           <thead>
             <tr>
@@ -25,12 +27,14 @@ const Home = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+          {data.map((item)=>(
+            <tr key={item.id}>
+              <th>{item.id}</th>
+              <th>{item.Nama}</th>
+              <th>{item.NIM}</th>
+              <th>{item.Jurusan}</th>
             </tr>
+          ))}
           </tbody>
        </table>
     </div>

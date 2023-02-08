@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div className="container mt-5" >
       <a href="/add" className="btn btn-primary"> <i className="fa-solid fa-plus"></i> tambah Mahasiswa</a>
-       <table class="table table-striped">
+       <table class="table table-striped mt-3">
           <thead>
             <tr>
               <th>ID</th>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
+import AddMahasiswa from "../components/Mahasiswa/AddMahasiswa";
 
-const Home = () => {
+const Home = ({message}) => {
 
   useEffect(()=>{
     getData()
@@ -24,6 +25,9 @@ const Home = () => {
   }
   return (
     <div className="container mt-5" >
+    <div className="notif">
+        <p>{message}</p>
+    </div>
       <a href="/add" className="btn btn-primary"> <i className="fa-solid fa-plus"></i> tambah Mahasiswa</a>
        <table class="table table-striped mt-3">
           <thead>
@@ -31,8 +35,7 @@ const Home = () => {
               <th>ID</th>
               <th>Nama</th>
               <th>NIM</th>
-              <th>Jurusan</th>
-              
+              <th>Jurusan</th>           
             </tr>
           </thead>
           <tbody>

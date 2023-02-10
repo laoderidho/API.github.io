@@ -67,7 +67,7 @@ const EditMahasiswa = () => {
             className="form-select"
             onChange={(e) => setJurusan(e.target.value)}
           >
-            <option selected>Pilih Jurusan</option>
+            <option disabled selected>Pilih Jurusan</option>
             <option value="Teknik Informatika">Teknik Informatika</option>
             <option value="Sistem Informasi">Sistem Informasi</option>
           </select>

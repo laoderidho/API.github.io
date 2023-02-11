@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
-import AddMahasiswa from "../components/Mahasiswa/AddMahasiswa";
 
-const Home = ({message}) => {
-
+const Home = () => {
   useEffect(()=>{
     getData()
   }, []);
@@ -19,15 +17,13 @@ const Home = ({message}) => {
       try{
         await axios.delete(`https://62236b7e3af069a0f9a1d1c8.mockapi.io/users/${id}`);
         getData();
+        alert(`data yang ber ID ${id} Telah di hapus`)
       }catch(err){
         console.log(err)
       }
   }
   return (
     <div className="container mt-5" >
-    <div className="notif">
-        <p>{message}</p>
-    </div>
       <a href="/add" className="btn btn-primary"> <i className="fa-solid fa-plus"></i> tambah Mahasiswa</a>
        <table class="table table-striped mt-3">
           <thead>

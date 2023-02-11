@@ -19,6 +19,7 @@ const EditMahasiswa = () => {
         e.preventDefault();
         try{
             await axios.put(`https://62236b7e3af069a0f9a1d1c8.mockapi.io/users/${id}`, {Nama, NIM, Jurusan})
+            alert(`data Berhasil di ubah dengan Nama ${Nama} NIM ${NIM}, Dan Jurusan ${Jurusan}`)
             navigate('/')
         }catch(err){
             console.log(err)
